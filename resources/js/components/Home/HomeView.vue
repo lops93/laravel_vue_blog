@@ -1,5 +1,6 @@
 <script setup>
 import MainLayout from "../layouts/MainLayout.vue";
+import { PencilIcon } from "@heroicons/vue/24/outline";
 const posts = [
   {
     id: 1,
@@ -16,33 +17,69 @@ const posts = [
       href: "#",
     },
   },
-  // More posts...
+  {
+    id: 1,
+    title: "Boost your conversion rate",
+    href: "#",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Marketing", href: "#" },
+    author: {
+      name: "Michael Foster",
+      role: "Co-Founder / CTO",
+      href: "#",
+    },
+  },
+  {
+    id: 1,
+    title: "Boost your conversion rate",
+    href: "#",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Marketing", href: "#" },
+    author: {
+      name: "Michael Foster",
+      role: "Co-Founder / CTO",
+      href: "#",
+    },
+  },
 ];
 </script>
 
 <template>
   <MainLayout>
-    <div class="bg-white py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2
-            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-          >
-            From the blog
-          </h2>
-          <p class="mt-2 text-lg leading-8 text-gray-600">
-            Learn how to grow your business with our expert advice.
-          </p>
+    <div class="py-24 bg-white sm:py-32">
+      <div class="px-6 mx-auto max-w-7xl lg:px-8">
+        <div class="flex items-center max-w-2xl mx-auto lg:mx-0">
+          <div class="ml-auto">
+            <div class="flex items-center">
+              <PencilIcon class="h-6" />
+              <h2
+                class="ml-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              >
+                From the blog
+              </h2>
+            </div>
+
+            <p class="mt-2 text-lg leading-8 text-gray-600">
+              Learn how to grow your business with our expert advice.
+            </p>
+          </div>
         </div>
+
         <div
-          class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          class="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-200 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
           <article
             v-for="post in posts"
             :key="post.id"
-            class="flex max-w-xl flex-col items-start justify-between"
+            class="flex flex-col items-start justify-between max-w-xl"
           >
-            <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex items-center text-xs gap-x-4">
               <time :datetime="post.datetime" class="text-gray-500">{{
                 post.date
               }}</time>
@@ -52,7 +89,7 @@ const posts = [
                 >{{ post.category.title }}</a
               >
             </div>
-            <div class="group relative">
+            <div class="relative group">
               <h3
                 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
               >
@@ -61,7 +98,7 @@ const posts = [
                   {{ post.title }}
                 </a>
               </h3>
-              <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+              <p class="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
                 {{ post.description }}
               </p>
             </div>
