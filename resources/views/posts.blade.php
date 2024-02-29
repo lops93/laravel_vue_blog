@@ -9,6 +9,6 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div id="app"><home-view/></div>
+    <div id="app"><post-index/></div>
 </body>
 </html>
