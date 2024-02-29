@@ -41,10 +41,8 @@
             </div>
           </div>
         </div>
-        test
       </div>
     </div>
-
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 px-2 pb-3 pt-2">
         <DisclosureButton
@@ -79,7 +77,7 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/", current: false },
   { name: "Posts", href: "/posts", current: false },
   { name: "About", href: "#", current: false },
 ];

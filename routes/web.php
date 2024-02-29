@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/posts', function () {
     return view('posts');
 });
+Route::get('/posts/create', function () {
+    return view('create');
+});
+Route::get('/posts/{id}/edit', function () {
+    return view('edit');
+});
