@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostIndexController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/posts', PostIndexController::class);
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
